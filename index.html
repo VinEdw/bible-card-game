@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Bible Card Game</title>
+    <link rel="stylesheet" type="text/css" href="style.css">
+    <link rel="icon" href="favicon.ico" type="image/x-icon">
+    <script src="script.js" defer></script>
+  </head>
+  <body>
+    <h1>Bible Card Game</h1>
+    <p>
+      Based on the hints given, try to guess the person or creature from the Bible.
+      You may get more hints by pressing the <em>Next Hint</em> button.
+      Enter your guesses in the box.
+      You may reveal all hints and the answer by pressing the <em>Reveal Answer</em> button.
+      You may get a random new card by pressing the <em>New Card</em> button.
+    </p>
+    <h2>Answer</h2>
+    <p id="answer">?</p>
+    <p id="notes"></p>
+    <h2>Hints</h2>
+    <div id="button-panel">
+      <button id="next-hint">Next Hint</button>
+      <button id="reveal-answer">Reveal Answer</button>
+      <button id="new-card">New Card</button>
+    </div>
+    <ol id="hint-list"></ol>
+    <h2>Guesses</h2>
+    <form id="guess-form">
+      <label for="guess-input">Enter your guesses:</label>
+      <input id="guess-input" type="text" required>
+      <input type="submit">
+    </form>
+    <ul id="guess-list"></ul>
+  </body>
+</html>

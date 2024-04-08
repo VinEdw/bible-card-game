@@ -1,0 +1,20 @@
+body {
+  max-width: 600px;
+}
+
+#guess-form {
+  display: flex;
+  flex-direction: column;
+  gap: 0.75rem;
+}
+
+#button-panel {
+  display: flex;
+  flex-direction: row;
+  flex: 1;
+  gap: 5px;
+}
+
+#button-panel button {
+  flex: 1;
+}
