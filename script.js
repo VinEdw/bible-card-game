@@ -1,15 +1,27 @@
 const cards = {
-  data: undefined,
+  data: [],
+  unusedIdxs: [],
 
   init: async function() {
     const response = await fetch("./cards.json");
     const data = await response.json();
     this.data = data;
+    this.resetUnused();
   },
 
   random: function() {
-    const idx = Math.floor(Math.random() * this.data.length);
+    if (this.unusedIdxs.length === 0) {
+      this.resetUnused();
+    }
+    const idx = this.unusedIdxs.splice(Math.floor(Math.random() * this.unusedIdxs.length), 1);
     return this.data[idx];
+  },
+
+  resetUnused: function() {
+    this.unusedIdxs = [];
+    for (let i = 0; i < this.data.length; i++) {
+      this.unusedIdxs.push(i);
+    }
   },
 };
 
